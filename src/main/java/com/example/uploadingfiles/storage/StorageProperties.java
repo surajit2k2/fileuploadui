@@ -8,7 +8,7 @@ public class StorageProperties {
 	/**
 	 * Folder location for storing files
 	 */
-	private String location = "C://temp";
+	private String location = "/data/temp";
 
 	public String getLocation() {
 		return location;
