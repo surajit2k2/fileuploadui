@@ -50,7 +50,7 @@ public class UploadingFilesApplication {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(UploadingFilesApplication.class);
 
-	@Bean
+	/*@Bean
 	RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
 			MessageListenerAdapter listenerAdapter) {
 
@@ -74,5 +74,5 @@ public class UploadingFilesApplication {
 	@Bean
 	StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
 		return new StringRedisTemplate(connectionFactory);
-	}
+	}*/
 }
