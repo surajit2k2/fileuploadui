@@ -16,6 +16,6 @@ public class RedisSendService {
 	public void sendToRedis(String fileType){
 		
 		LOGGER.info("Sending message...");
-		template.convertAndSend("chat", "File Uploaded :: " + fileType);
+		template.convertAndSend("chat", "File Uploaded again :: " + fileType);
 		}
 }
