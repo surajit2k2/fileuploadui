@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.uploadingfiles.storage.RedisSendService;
 import com.example.uploadingfiles.storage.StorageFileNotFoundException;
 import com.example.uploadingfiles.storage.StorageService;
 
@@ -26,6 +27,9 @@ import com.example.uploadingfiles.storage.StorageService;
 public class FileUploadController {
 
 	private final StorageService storageService;
+	
+	@Autowired
+	RedisSendService redisSender;
 
 	@Autowired
 	public FileUploadController(StorageService storageService) {
@@ -57,6 +61,7 @@ public class FileUploadController {
 			RedirectAttributes redirectAttributes) {
 
 		storageService.store(file);
+		redisSender.sendToRedis(file.getOriginalFilename());
 		redirectAttributes.addFlashAttribute("message",
 				"You successfully uploaded " + file.getOriginalFilename() + "!");
 

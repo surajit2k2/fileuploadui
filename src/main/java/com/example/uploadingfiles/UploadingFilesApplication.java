@@ -26,17 +26,17 @@ public class UploadingFilesApplication {
 		ApplicationContext ctx = 
 		SpringApplication.run(UploadingFilesApplication.class, args);
 		
-		StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
-		Receiver receiver = ctx.getBean(Receiver.class);
+//		StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
+//		Receiver receiver = ctx.getBean(Receiver.class);
 
-		while (receiver.getCount() == 0) {
+		/*while (true) {
 
 			LOGGER.info("Sending message...");
 			template.convertAndSend("chat", "Hello from Redis!");
 			Thread.sleep(500L);
-		}
+		}*/
 
-		System.exit(0);
+		
 		
 	}
 
